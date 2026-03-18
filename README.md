@@ -1,1 +1,1 @@
-# -Laboratory-Work-4-Activity-1-Improving-CNN-Performance Using Regularization
+# -Laboratory-Work-4-Activity-Improving-CNN-Performance Using Regularization
