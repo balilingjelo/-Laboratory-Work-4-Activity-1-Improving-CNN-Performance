@@ -113,3 +113,39 @@ Smaller Learning Rate (0.0001) - enabled the model to make smaller adjustments t
 
 Early Stopping - stopped training at Epoch 5, where val_accuracy was highest (0.8883) and val_loss lowest (0.3870), avoiding overfitting.
 
+------
+
+10. Which enhancement contributed the most to performance improvement? Why?
+
+The greatest impact came from **Data Augmentation** as it addressed the main issue - overfitting with too few training samples. It created different variations of each image via flipping, rotation, zooming, and contrast, so the model learned the common features of the images rather than memorizing the training images, which is why the model achieved a high validation accuracy of **0.8883** and AUC of **0.9614**.
+
+------
+
+11. Did the gap between training and validation accuracy decrease? Explain.
+
+The gap between training and validation accuracy decreased after applying model enhancements.
+
+| Epoch | Train Accuracy | Val Accuracy | Gap |
+|-------|---------------|--------------|-----|
+| 1/20  | 0.7336        | 0.8567       | +0.1231 |
+| 2/20  | 0.7446        | 0.8415       | +0.0969 |
+| 3/20  | 0.7510        | 0.8577       | +0.1067 |
+| 4/20  | 0.7598        | 0.8835       | +0.1237 |
+| 5/20  | 0.7656        | 0.8883       | +0.1227 |
+| 6/20  | 0.7723        | 0.8615       | +0.0892 |
+| 7/20  | 0.7832        | 0.8720       | +0.0888 |
+| 8/20  | 0.7799        | 0.8787       | +0.0988 |
+| 9/20  | 0.7782        | 0.8348       | +0.0566 |
+| 10/20 | 0.7899        | 0.8529       | +0.0630 |
+
+* Validation accuracy was always above training accuracy – an indication that the modifications were working
+
+* The difference reduced from +0.1231 (+1 Epoch) to +0.0630 (+10 Epochs), implying increased stability
+
+* Data Augmentation ensured that training accuracy was falsely low due to difficult training using augmented images
+
+* Dropout (0.4 & 0.5) ensured the dense layers did not overfit, thus maintaining high validation accuracy
+
+* The narrowing difference shows that the network was learning generalized features rather than overfitting training data
+
+
