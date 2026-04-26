@@ -146,6 +146,41 @@ The gap between training and validation accuracy decreased after applying model 
 
 * Dropout (0.4 & 0.5) ensured the dense layers did not overfit, thus maintaining high validation accuracy
 
-* The narrowing difference shows that the network was learning generalized features rather than overfitting training data
+* The narrowing gap shows that the network was learning generalized features rather than overfitting training data
 
+------
 
+# D. Explainability (Grad-CAM Integration)
+
+12. How did Grad-CAM help in understanding model predictions?
+
+Grad-CAM transformed model evaluation from purely numerical metrics into visual explainability — confirming not just what the model predicted, but why it predicted it, which is critical for trust and further improvement in image classification tasks.
+
+------
+
+13. Did the improved model focus on more relevant regions? Provide evidence.
+
+| Enhancement | How It Improves Regional Focus |
+|-------------|-------------------------------|
+| Data Augmentation | Forces the model to recognize fern features across different orientations and scales, not just memorized positions |
+| BatchNormalization | Stabilizes feature learning in each Conv2D layer, ensuring cleaner and more meaningful feature maps |
+| Dropout (0.4 & 0.5) | Prevents over-reliance on specific neurons, encouraging broader and more distributed feature detection |
+| Deeper Architecture (32→64→128 filters) | Progressively learns from edges → textures → complex fern structures across 3 conv blocks |
+
+The fact that the model has AUC of 0.9614 and accuracy of 84% over 20 classes of ferns is evidence that the model has learned discriminative features of the classes.
+
+An irrelevant region-oriented model would not produce such a discrimination score for similar-looking plants. Moreover, classes of HollyFern and Silver Lace Fern got F1 of 0.96 and 0.93 respectively which means that distinctive features were recognized.
+
+------
+
+14. Why is explainability important in real-world AI applications?
+
+Explainability is important because it allows humans to understand, trust, and verify why an AI model made a specific decision.
+
+Trusted and adopted — users are more likely to trust the model based on understanding its thinking process rather than only the result.
+Error diagnosis — tells us whether the model is paying attention to irrelevant elements such as the background rather than the object itself.
+Accountability — especially in important domains such as medicine and financial institutions, decisions should be explainable.
+Uncovering biases — shows the underlying biases in the training set which are hard to detect otherwise.
+Compliance with regulations — in many sectors, it is necessary to have explainable decisions.
+
+In my model, the Grad-CAM demonstrated that the CNN was indeed paying attention to the correct leaf areas and not the false positives within the background.
