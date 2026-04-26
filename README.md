@@ -17,7 +17,7 @@ Model Evaluation – Weakest-Performing Classes
 | 5 | JapanesePaintedFern | 38 | ~48 | **79.2%** | 3 → SilverLaceFern | 🟡 Moderate |
 | 6 | BostonFern | 36 | ~46 | **78.3%** | 5 → BrakenFern | 🟡 Moderate |
 | 7 | MaidenhairFern | 45 | ~56 | **80.4%** | Scattered | 🟡 Moderate |
--
+------
 
 
 2. How did Precision, Recall, and F1-score vary across classes?
