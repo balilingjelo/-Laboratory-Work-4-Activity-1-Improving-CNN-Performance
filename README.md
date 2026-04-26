@@ -73,4 +73,19 @@ Dropout randomly switches off neurons to prevent over-fitting some features. In 
 
 In your training logs, you can see that Early Stopping tracked val_loss and it stopped training when there was no improvement and restored the model's weight to its original state.
 
-EpochTrain AccuracyVal AccuracyVal Loss10.73360.85670.497340.75980.88350.466550.76560.88830.3870 ← best60.77230.86150.501790.77820.83480.5737100.78990.85290.5658
+Looking at my epochs
+
+| Epoch | Train Accuracy | Val Accuracy | Val Loss |
+|---|---|---|---|
+| 1 | 0.7336 | 0.8567 | 0.4973 |
+| 4 | 0.7598 | 0.8835 | 0.4665 |
+| 5 | 0.7656 | **0.8883** | **0.3870** ← best |
+| 6 | 0.7723 | 0.8615 | 0.5017 |
+| 9 | 0.7782 | 0.8348 | 0.5737 |
+| 10 | 0.7899 | 0.8529 | 0.5658 |
+
+**The validation loss began to grow after Epoch 5** (0.3870 → 0.5017 → 0.5737) while the training accuracy continued to improve - an indication that overfitting began. Early Stopping with `patience=3` would catch this overfitting and stop training before the model completely overfits, and would revert to best weights (from Epoch 5).
+
+This stopped the model from capturing noise in the training data as its performance on the validation set dropped, instead of saving the final trained weights.
+
+------
