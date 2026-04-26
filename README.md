@@ -5,7 +5,7 @@ https://colab.research.google.com/drive/1NRu7SArP7O_AFbvwd8z6huRh8VGUSZRJ?usp=dr
 
 # A. Model Evaluation Analysis
 
-* 1. What were the weakest-performing classes based on the confusion matrix?
+1. What were the weakest-performing classes based on the confusion matrix?
    
 Model Evaluation – Weakest-Performing Classes
 | Rank | Class | Correct Predictions | Est. Total Samples | Accuracy | Main Misclassifications | Severity |
@@ -26,3 +26,5 @@ Precision (how few false positives): HollyFern is top of the class at 1.00 - eve
 Recall (how few false negatives): LadyFern (0.97) and TropicalBrakeFern (0.97) are best at recall - they never missed a sample. BrakenFern is at 0.50; that is, half of its real samples were given incorrect labels.
 F1-Score (harmonic average): HollyFern (0.96) and StaghornFern (0.94) come out on top. RoyalFern (0.62) and BrakenFern (0.64) are the woes, just like the confusion matrix.
 The overall accuracy is 84% (macro avg F1 = 0.83), which is good for a 20-class prediction. We should be worried about the lowest 3-4 classes bringing down the macro average.
+------
+
