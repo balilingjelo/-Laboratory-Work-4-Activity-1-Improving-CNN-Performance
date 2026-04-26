@@ -89,3 +89,23 @@ Looking at my epochs
 This stopped the model from capturing noise in the training data as its performance on the validation set dropped, instead of saving the final trained weights.
 
 ------
+
+# C. Performance Comparison
+
+Before vs. After Enhancements
+
+| Metric | Original Model | Enhanced Model |
+|--------|---------------|----------------|
+| Best Val Accuracy | Lower (overfitting observed) | **0.8883** (Epoch 5) |
+| Overfitting | High (train >> val accuracy) | Reduced — gap narrowed |
+| Overall Accuracy | — | **0.84** |
+| AUC Score | — | **0.9614** |
+| Macro F1 | — | **0.83** |
+| Weighted F1 | — | **0.84** |
+
+Data Augmentation - prevented overfitting by introducing transformations (flips, rotations, zooms, and contrast changes) of the fern images, increasing the model's ability to generalize to new fern images.
+BatchNormalization - normalized the training for the 3 Conv2D blocks, enabling quicker and more reliable convergence.
+Dropout (0.4 and 0.5) - stopped the dense layers from overfitting the training data, thus boosting validation accuracy.
+Smaller Learning Rate (0.0001) - enabled the model to make smaller adjustments to the weights, preventing overshooting the solution.
+Early Stopping - stopped training at Epoch 5, where val_accuracy was highest (0.8883) and val_loss lowest (0.3870), avoiding overfitting.
+
