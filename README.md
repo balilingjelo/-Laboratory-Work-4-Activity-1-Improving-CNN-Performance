@@ -27,7 +27,7 @@ Recall (how few false negatives): LadyFern (0.97) and TropicalBrakeFern (0.97) a
 F1-Score (harmonic average): HollyFern (0.96) and StaghornFern (0.94) come out on top. RoyalFern (0.62) and BrakenFern (0.64) are the woes, just like the confusion matrix.
 The overall accuracy is 84% (macro avg F1 = 0.83), which is good for a 20-class prediction. We should be worried about the lowest 3-4 classes bringing down the macro average.
 
--
+------
 
 3. What does a low recall indicate in your model?
 
