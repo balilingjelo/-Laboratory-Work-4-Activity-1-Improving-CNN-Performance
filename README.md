@@ -18,6 +18,8 @@ Model Evaluation – Weakest-Performing Classes
 | 6 | BostonFern | 36 | ~46 | **78.3%** | 5 → BrakenFern | 🟡 Moderate |
 | 7 | MaidenhairFern | 45 | ~56 | **80.4%** | Scattered | 🟡 Moderate |
 
+
+
 2. How did Precision, Recall, and F1-score vary across classes?
    
 Precision (how few false positives): HollyFern is top of the class at 1.00 - every sample it predicted was correct. CinnamonFern (0.63) is the worst - 37% of the samples it predicted were not actually the class it was predicting.
