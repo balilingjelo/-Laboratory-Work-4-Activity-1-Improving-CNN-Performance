@@ -43,10 +43,8 @@ BrakenFern and RoyalFern have a recall of 0.50 - the model was correctly predict
 
 The total area under the curve (AUC) was 0.9614 and the model's accuracy (ACC) was 0.84. They're good, just for different reasons.
 
-What each metric tells you
+* Accuracy (0.84) is the number of correct guesses divided by the total number of guesses. This means every mistake is weighted equally, and it's impacted by class imbalance: if there are more samples of one class, it overwhelmingly impacts the metric.
 
-Accuracy (0.84) is the number of correct guesses divided by the total number of guesses. This means every mistake is weighted equally, and it's impacted by class imbalance: if there are more samples of one class, it overwhelmingly impacts the metric.
-
-AUC (0.9614) is a threshold-independent measure of how well it can separate classes. With 0.9614, our model places the true sample of a class higher than the non-sample 96% of the time. It is not affected by the classification threshold, and is less sensitive to class imbalance..
+* AUC (0.9614) is a threshold-independent measure of how well it can separate classes. With 0.9614, our model places the true sample of a class higher than the non-sample 96% of the time. It is not affected by the classification threshold, and is less sensitive to class imbalance..
 
 ------
