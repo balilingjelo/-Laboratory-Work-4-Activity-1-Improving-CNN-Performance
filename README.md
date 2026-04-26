@@ -7,7 +7,7 @@ https://colab.research.google.com/drive/1NRu7SArP7O_AFbvwd8z6huRh8VGUSZRJ?usp=dr
 
 1. What were the weakest-performing classes based on the confusion matrix?
    
-# Model Evaluation – Weakest-Performing Classes
+Model Evaluation – Weakest-Performing Classes
 | Rank | Class | Correct Predictions | Est. Total Samples | Accuracy | Main Misclassifications | Severity |
 |------|-------|--------------------|--------------------|----------|------------------------|----------|
 | 1 | RoyalFern | 26 | ~50 | **52.0%** | 8 → ButtonFern, 5 → LadyFern | 🔴 Weakest |
