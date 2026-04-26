@@ -48,3 +48,29 @@ The total area under the curve (AUC) was 0.9614 and the model's accuracy (ACC) w
 * AUC (0.9614) is a threshold-independent measure of how well it can separate classes. With 0.9614, our model places the true sample of a class higher than the non-sample 96% of the time. It is not affected by the classification threshold, and is less sensitive to class imbalance..
 
 ------
+
+# B. Model Improvement
+
+5. How did data augmentation affect validation accuracy?
+
+RandomFlip, RandomRotation, RandomZoom, and RandomContrast data (or transforms) augmentation was applied as model's first layer to increase training images artificial variety each epoch. This was intended to help mitigate overfitting so the model would not learn the training images by heart (which leads to lower training- validation accuracy difference and better performance on validation). It was used alongside Dropout, BatchNormalization, and Early Stopping so the improvements were on top of each other, enhancing validation accuracy as a whole.
+
+------
+
+6. Why is Batch Normalization important in CNNs?
+
+Batch Normalization normalizes the output of each layer during training, which speeds up convergence, prevents vanishing/exploding gradients, and reduces overfitting. In my model, it was placed after every Conv2D layer to keep activations stable as features passed through the network, allowing the model to train more efficiently across 20 fern classes.
+
+------
+
+7. What role did Dropout play in improving your model?
+
+Dropout randomly switches off neurons to prevent over-fitting some features. In my model applied **Dropout(0.4)** after the convolutional layers and **Dropout(0.5)** before the final layer to avoid over-fitting and were able to generalise to new fern images.
+
+------
+
+8. How did Early Stopping prevent overfitting?
+
+In your training logs, you can see that Early Stopping tracked val_loss and it stopped training when there was no improvement and restored the model's weight to its original state.
+
+EpochTrain AccuracyVal AccuracyVal Loss10.73360.85670.497340.75980.88350.466550.76560.88830.3870 ← best60.77230.86150.501790.77820.83480.5737100.78990.85290.5658
