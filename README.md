@@ -26,13 +26,14 @@ Precision (how few false positives): HollyFern is top of the class at 1.00 - eve
 Recall (how few false negatives): LadyFern (0.97) and TropicalBrakeFern (0.97) are best at recall - they never missed a sample. BrakenFern is at 0.50; that is, half of its real samples were given incorrect labels.
 F1-Score (harmonic average): HollyFern (0.96) and StaghornFern (0.94) come out on top. RoyalFern (0.62) and BrakenFern (0.64) are the woes, just like the confusion matrix.
 The overall accuracy is 84% (macro avg F1 = 0.83), which is good for a 20-class prediction. We should be worried about the lowest 3-4 classes bringing down the macro average.
-------
+
+-
 
 3. What does a low recall indicate in your model?
 
 Recall is the number of true instances of a class that were identified. If recall is low, the model is not identifying the true positives - it spots a fern that's actually BrakenFern but decides it's not a fern which belongs to BrakenFern.
 
-The poor recall in this model suggests that the model is not recognising the real fern samples - the model is not predicting the correct class for actual instances of a class, predicting them as another fern species.
+The low recall in this model suggests that the model is not recognising the real fern samples - the model is not predicting the correct class for actual instances of a class, predicting them as another fern species.
 
 BrakenFern and RoyalFern have a recall of 0.50 - the model was correctly predicting half as another fern. The model can't see the fern.
 
